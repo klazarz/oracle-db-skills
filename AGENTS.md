@@ -32,9 +32,9 @@ skills/
 
 | User asks about… | Load from |
 |------------------|-----------|
-| Backup, recovery, RMAN, Data Guard, redo/undo logs, users | `skills/admin/` |
-| JDBC, connection pooling, JSON, XML, spatial, full-text, transactions | `skills/appdev/` |
-| RAC, CDB/PDB, Exadata, In-Memory, OCI, ATP/ADW | `skills/architecture/` |
+| Backup, recovery, RMAN, redo/undo logs, users | `skills/admin/` |
+| JDBC, connection pooling, JSON, XML, spatial, full-text, transactions, property graphs | `skills/appdev/` |
+| RAC, CDB/PDB, Exadata, In-Memory, OCI, ATP/ADW, Data Guard | `skills/architecture/` |
 | ERD, data modeling, partitioning, tablespaces | `skills/design/` |
 | Liquibase, Flyway, online operations, EBR, utPLSQL, git for SQL | `skills/devops/` |
 | Advanced Queuing, DBMS_SCHEDULER, materialized views, DBLinks, APEX | `skills/features/` |

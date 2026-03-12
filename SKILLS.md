@@ -39,7 +39,7 @@
 | `skills/security/encryption.md` | security | TDE, Oracle Wallet setup, tablespace/column encryption, key rotation |
 | `skills/security/network-security.md` | security | SSL/TLS, sqlnet.ora encryption, ACLs for network packages, listener hardening |
 | `skills/admin/backup-recovery.md` | admin | RMAN architecture, backup sets vs image copies, incremental backups, recovery scenarios |
-| `skills/admin/dataguard.md` | admin | Physical/logical standby, Data Guard Broker, switchover vs failover, Active Data Guard |
+| `skills/architecture/dataguard.md` | architecture | Physical/logical standby, Data Guard Broker, switchover vs failover, protection modes, Active Data Guard |
 | `skills/admin/rman-basics.md` | admin | Common RMAN commands, channel config, compression, encryption, reporting |
 | `skills/admin/undo-management.md` | admin | Undo sizing, UNDO_RETENTION, ORA-01555 causes and prevention, Undo Advisor |
 | `skills/admin/redo-log-management.md` | admin | Log sizing, archivelog mode, multiplexing, switch frequency monitoring |

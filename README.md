@@ -28,7 +28,7 @@ Oracle DB Skills is a curated library of 100+ practical, documentation-backed gu
 | [Security](#security) | 6 | `skills/security/` |
 | [Administration](#administration) | 6 | `skills/admin/` |
 | [Monitoring & Diagnostics](#monitoring--diagnostics) | 5 | `skills/monitoring/` |
-| [Architecture & Infrastructure](#architecture--infrastructure) | 5 | `skills/architecture/` |
+| [Architecture & Infrastructure](#architecture--infrastructure) | 6 | `skills/architecture/` |
 | [DevOps & CI/CD](#devops--cicd) | 5 | `skills/devops/` |
 | [Migrations to Oracle](#migrations-to-oracle) | 14 | `skills/migrations/` |
 | [PL/SQL Development](#plsql-development) | 12 | `skills/plsql/` |
@@ -120,7 +120,6 @@ Oracle DB Skills is a curated library of 100+ practical, documentation-backed gu
 | File | Description |
 |------|-------------|
 | `backup-recovery.md` | RMAN architecture, backup sets vs image copies, incremental backups, recovery scenarios |
-| `dataguard.md` | Physical/logical standby, Data Guard Broker, switchover vs failover, Active Data Guard |
 | `rman-basics.md` | Common RMAN commands, channel config, compression, encryption, reporting |
 | `undo-management.md` | Undo sizing, UNDO_RETENTION, ORA-01555 causes and prevention, Undo Advisor |
 | `redo-log-management.md` | Log sizing, archivelog mode, multiplexing, switch frequency monitoring |
@@ -148,6 +147,7 @@ Oracle DB Skills is a curated library of 100+ practical, documentation-backed gu
 
 | File | Description |
 |------|-------------|
+| `dataguard.md` | Physical/logical standby, Data Guard Broker, switchover vs failover, protection modes, Active Data Guard |
 | `rac-concepts.md` | Cache Fusion, GCS/GES, services, node affinity, RAC wait events, TAF/FCF |
 | `multitenant.md` | CDB/PDB architecture, cloning, plugging/unplugging, resource management, Application Containers |
 | `oracle-cloud-oci.md` | ATP, ADW, Base Database Service, ExaCS, connection methods, Free Tier |

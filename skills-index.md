@@ -50,7 +50,6 @@ A tracking file for skills.md topics to create for working with Oracle DB.
 
 ## Administration
 - [x] `backup-recovery.md` — RMAN strategy, backup sets, recovery scenarios
-- [x] `dataguard.md` — Standby setup, switchover, failover, lag monitoring
 - [x] `rman-basics.md` — Common RMAN commands, incremental backups, catalog
 - [x] `undo-management.md` — Undo retention, ORA-01555 avoidance, sizing
 - [x] `redo-log-management.md` — Log sizing, archivelog mode, log switches
@@ -64,6 +63,7 @@ A tracking file for skills.md topics to create for working with Oracle DB.
 - [x] `top-sql-queries.md` — Finding expensive SQL, V$ views for diagnostics
 
 ## Architecture & Infrastructure
+- [x] `dataguard.md` — Physical/logical standby, Data Guard Broker, switchover vs failover, protection modes, Active Data Guard
 - [x] `rac-concepts.md` — Real Application Clusters, interconnect, services
 - [x] `multitenant.md` — CDB/PDB architecture, pluggable databases, cloning
 - [x] `oracle-cloud-oci.md` — ATP, ADW, Exadata Cloud, cloud-specific features
