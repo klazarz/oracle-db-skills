@@ -4,7 +4,7 @@
 
 Oracle Data Guard is Oracle's high availability, disaster recovery, and data protection solution. It maintains one or more synchronized copies of a production database (the **primary**) called **standby databases**. If the primary becomes unavailable, a standby can be activated to take over, minimizing downtime and data loss.
 
-Data Guard is a native feature of Oracle Database **Enterprise Edition**. Standard Edition is not supported. A maximum of 30 standby destinations can be connected to a single primary.
+Data Guard is a native feature of Oracle Database **Enterprise Edition**. Standard Edition is not supported. A primary can ship redo directly to up to 30 standby databases; with cascading, configurations can scale beyond 30 total standbys.
 
 The two core services are:
 - **Redo Transport Services** — automates transfer of redo data from primary to standby destinations; detects and resolves archive log gaps automatically.
@@ -12,7 +12,7 @@ The two core services are:
 
 ---
 
-## Standby Database Types
+## 1. Standby Database Types
 
 ### Physical Standby
 
@@ -28,10 +28,10 @@ A block-for-block identical copy of the primary database. Redo Apply (Media Reco
 
 Maintained via **SQL Apply** (LogMiner-based): redo is transformed into SQL statements and executed on an open read-write database.
 
-- Open for read-write during apply; target tables available read-only.
+- Open for read-write during apply; SQL Apply-maintained tables are protected from user DML by logical standby guard rules.
 - Can carry additional indexes, partitioning, and materialized views not on the primary.
 - Enables rolling database software upgrades using the `DBMS_ROLLING` package.
-- Not supported for data types introduced after Oracle 12c; use physical standby or Oracle GoldenGate for those.
+- Logical standby support has datatype and object restrictions. Starting with Oracle Database 12.2, newer types/features (for example long identifiers) are supported for logical replication by using `DBMS_ROLLING` or Oracle GoldenGate, not generic SQL Apply in all cases.
 
 ### Snapshot Standby
 
@@ -76,7 +76,7 @@ DGMGRL> ENABLE FAR_SYNC farsync_inst;
 
 ---
 
-## Protection Modes
+## 2. Protection Modes
 
 Protection modes control the trade-off between data protection and primary database performance.
 
@@ -123,7 +123,7 @@ SELECT PROTECTION_MODE, PROTECTION_LEVEL FROM V$DATABASE;
 
 ---
 
-## Redo Transport
+## 3. Redo Transport
 
 ### LOG_ARCHIVE_DEST_n
 
@@ -203,7 +203,7 @@ SELECT * FROM V$REDO_DEST_RESP_HISTOGRAM WHERE DEST_ID = 2;
 
 ---
 
-## Apply Services
+## 4. Apply Services
 
 ### Redo Apply (Physical Standby)
 
@@ -249,7 +249,7 @@ FROM V$DATABASE;
 
 ---
 
-## Key Initialization Parameters
+## 5. Key Initialization Parameters
 
 | Parameter | Description |
 |---|---|
@@ -273,7 +273,7 @@ FROM V$DATABASE;
 
 ---
 
-## Data Guard Broker (DGMGRL)
+## 6. Data Guard Broker (DGMGRL)
 
 Broker automates and centralizes configuration, monitoring, and role transitions. Using Broker is strongly recommended over manual `LOG_ARCHIVE_DEST_n` management.
 
@@ -335,7 +335,7 @@ DGMGRL> IMPORT CONFIGURATION FROM '/path/config.dat';
 
 ---
 
-## Switchover and Failover
+## 7. Switchover and Failover
 
 ### Switchover
 
@@ -407,7 +407,7 @@ DGMGRL> REINSTATE DATABASE 'old_primary_db';
 
 ---
 
-## Fast-Start Failover (FSFO)
+## 8. Fast-Start Failover (FSFO)
 
 FSFO lets an observer process automatically initiate failover when the primary is unavailable, without DBA intervention. Requires Broker.
 
@@ -440,12 +440,12 @@ FROM V$DATABASE;
 
 ---
 
-## Active Data Guard (Read Offload)
+## 9. Active Data Guard (Read Offload)
 
 Active Data Guard allows a physical standby to be open **read-only** while simultaneously applying redo. Requires a separate Active Data Guard license.
 
 ```sql
--- Standby opens read-only; apply continues automatically (26ai / 23ai)
+-- Open the standby read-only, then start/ensure Redo Apply
 ALTER DATABASE OPEN READ ONLY;
 ALTER DATABASE RECOVER MANAGED STANDBY DATABASE DISCONNECT;
 
@@ -466,7 +466,7 @@ ALTER SESSION SYNC WITH PRIMARY;
 
 ---
 
-## Monitoring Views Reference
+## 10. Monitoring Views Reference
 
 | View | Description |
 |---|---|
@@ -495,7 +495,7 @@ Broker-specific views (26ai):
 
 ---
 
-## Best Practices
+## 11. Best Practices
 
 - **Use Data Guard Broker (DGMGRL)** for all operations. Manual `LOG_ARCHIVE_DEST_n` management is error-prone and difficult to maintain consistently.
 - **Configure Standby Redo Logs** on both primary and standby. They are required for real-time apply and synchronous transport. Size groups identically to the primary online redo logs.
@@ -508,7 +508,7 @@ Broker-specific views (26ai):
 
 ---
 
-## Common Mistakes
+## 12. Common Mistakes
 
 **Not configuring Standby Redo Logs**
 Without SRLs, real-time apply is not possible and synchronous transport cannot acknowledge. Apply lag increases unnecessarily.
@@ -545,7 +545,7 @@ The `USING CURRENT LOGFILE` clause (deprecated 12.1) and `V$MANAGED_STANDBY` (de
 
 ---
 
-## Oracle Version Notes (19c vs 26ai)
+## 13. Oracle Version Notes (19c vs 26ai)
 
 - **Oracle 19c:** Full Data Guard functionality — physical, logical, and snapshot standbys; Far Sync; all three protection modes; Broker; DGMGRL; FSFO. `V$MANAGED_STANDBY` is the primary process monitoring view (deprecated in 12.2 but still present).
 - **Oracle 21c:** Introduced Data Guard for Pluggable Databases (DG PDB) — protect individual PDBs within a CDB without replicating the entire container. PDB-level switchover/failover via Broker only.
@@ -567,7 +567,7 @@ The `USING CURRENT LOGFILE` clause (deprecated 12.1) and `V$MANAGED_STANDBY` (de
 
 ---
 
-## Sources
+## 14. Sources
 
 - [Oracle Data Guard Concepts and Administration, Release 26.1](https://docs.oracle.com/en/database/oracle/oracle-database/26/sbydb/index.html)
 - [Oracle Data Guard Concepts and Administration 26.1 — Introduction](https://docs.oracle.com/en/database/oracle/oracle-database/26/sbydb/introduction-to-oracle-data-guard-concepts.html)
