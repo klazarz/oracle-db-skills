@@ -21,6 +21,19 @@
 
 The OCR detail page explicitly calls out 25.x image behavior. In particular, it notes setup scripts starting with `25.1.2.0.0` and states that the 25.x service supports ONNX embedding pipeline models only.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when deploying Oracle Private AI Services container endpoints.
+- **Use another image when:** Avoid when you only need a base database runtime without AI service APIs.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/private-ai:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/private-ai:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/private-ai

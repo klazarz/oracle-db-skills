@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repository Is
 
-A library of 129 standalone Oracle Database and OCR container reference guides (skill files) organized by category under `skills/`. Each file covers one topic with explanations, examples, and version-specific notes. There is no build system, test suite, or compilation step — this is a pure Markdown content library.
+A library of 130 standalone Oracle Database and OCR container reference guides (skill files) organized by category under `skills/`. Each file covers one topic with explanations, examples, and version-specific notes. There is no build system, test suite, or compilation step — this is a pure Markdown content library.
 
 ## Adding or Modifying Skill Files
 
@@ -65,7 +65,7 @@ When adding a new skill file, update all four of these files.
 - [skills/performance/explain-plan.md](skills/performance/explain-plan.md) — foundation for SQL performance work
 - [skills/plsql/plsql-package-design.md](skills/plsql/plsql-package-design.md) — foundation for PL/SQL architecture
 - [skills/devops/schema-migrations.md](skills/devops/schema-migrations.md) — Liquibase/Flyway with Oracle in CI/CD
-- [skills/containers/private-ai.md](skills/containers/private-ai.md) — OCR repository guidance for the Oracle Private AI Services container
+- [skills/containers/container-selection-matrix.md](skills/containers/container-selection-matrix.md) — quick decision matrix for choosing the right OCR database-category image
 
 ## GitHub Ruleset
 

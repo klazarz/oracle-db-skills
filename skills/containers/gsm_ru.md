@@ -21,6 +21,19 @@
 
 The OCR detail page does not publish a separate 19c-versus-26ai matrix for `gsm_ru`, but the repository is under CPU repository terms and the latest OCR pull command currently uses the `latest-23` tag stream.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when you need RU-tagged GSM images under CPU terms.
+- **Use another image when:** Avoid when non-RU GSM stream is sufficient; use gsm.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/gsm_ru:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/gsm_ru:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/gsm_ru

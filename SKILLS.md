@@ -1,6 +1,6 @@
 # Oracle DB Skills
 
-129 Oracle Database and OCR container reference guides for AI agents. Each file is a standalone skill covering one topic with examples, best practices, and common mistakes.
+130 Oracle Database and OCR container reference guides for AI agents. Each file is a standalone skill covering one topic with examples, best practices, and common mistakes.
 
 **Install:** `npx skills add krisrice/oracle-db-skills`
 
@@ -137,3 +137,4 @@
 | `skills/containers/enterprise_ru.md` | containers | Oracle Database Enterprise Edition CPU release-update image repository |
 | `skills/containers/gsm_ru.md` | containers | Oracle Global Service Manager CPU repository stream |
 | `skills/containers/rac_ru.md` | containers | Oracle RAC release-update container image repository |
+| `skills/containers/container-selection-matrix.md` | containers | Decision matrix for choosing the right OCR database-category container image |

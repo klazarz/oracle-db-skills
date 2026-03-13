@@ -21,6 +21,19 @@
 
 The OCR detail page does not provide a dedicated 19c-versus-26ai matrix for `gsm`. Use the OCR tags table for the exact image version, or `gsm_ru` if you need the CPU repository stream.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when deploying Oracle Globally Distributed Database and GSM is required.
+- **Use another image when:** Avoid when you need RU stream tagging; use gsm_ru.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/gsm:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/gsm:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/gsm

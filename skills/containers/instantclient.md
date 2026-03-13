@@ -21,6 +21,19 @@
 
 The OCR detail page does not publish a dedicated 19c-versus-26ai matrix for `instantclient`. Use the OCR tags table to pick the client version that matches your target environment.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when you need Oracle client libraries/tools in a container, not a DB server.
+- **Use another image when:** Avoid when you need database instance startup; use free/enterprise/etc.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/instantclient:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/instantclient:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/instantclient

@@ -21,6 +21,19 @@
 
 The OCR detail page focuses on MicroTx release tags rather than a 19c-versus-26ai database matrix. Use the repository tags table to select the console version you need.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when you need the MicroTx Enterprise console UI for operations/monitoring.
+- **Use another image when:** Avoid when you are not running MicroTx Enterprise coordinator workflows.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/microtx-ee-console:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/microtx-ee-console:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/microtx-ee-console

@@ -21,6 +21,19 @@
 
 The OCR detail page documents `express` as Oracle Database XE Release 21c (21.3.0.0). This repository is not presented as a 19c or 26ai image line on OCR.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when you need Oracle Database XE 21c behavior in a compact local image.
+- **Use another image when:** Avoid when you need newer AI Database 26ai capabilities; use free/enterprise.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/express:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/express:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/express

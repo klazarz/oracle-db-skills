@@ -145,6 +145,7 @@ A tracking file for skills.md topics to create for working with Oracle DB.
 - [x] `oracle-apex.md` — Low-code app dev on Oracle
 
 ## Container Images
+- [x] `SKILLS.md` — Full container skills index (common and advanced/niche)
 - [x] `cman.md` — Oracle Connection Manager container repository and OCR pull guidance
 - [x] `enterprise.md` — Oracle AI Database Server Release 26ai Enterprise Edition container image
 - [x] `graph-quickstart.md` — Property Graph quickstart image built on Oracle AI Database 26ai Free
@@ -166,3 +167,4 @@ A tracking file for skills.md topics to create for working with Oracle DB.
 - [x] `enterprise_ru.md` — Oracle Database Enterprise Edition CPU release-update image repository
 - [x] `gsm_ru.md` — Oracle Global Service Manager CPU repository stream
 - [x] `rac_ru.md` — Oracle RAC release-update container image repository
+- [x] `container-selection-matrix.md` — Decision matrix for choosing the right OCR database-category container image

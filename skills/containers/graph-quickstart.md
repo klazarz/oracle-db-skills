@@ -21,6 +21,19 @@
 
 This repository is explicitly tied to Oracle AI Database 26ai. The OCR readme says the image is based on the 26ai Free container image and should not be used for production workloads.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use for quick Property Graph exploration and demos on 26ai.
+- **Use another image when:** Avoid for production workloads; use supported production deployment patterns.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/graph-quickstart:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/graph-quickstart:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/graph-quickstart

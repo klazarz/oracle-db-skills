@@ -21,6 +21,19 @@
 
 The OCR detail page explicitly documents this repository as the 19c Release Update image line, and the latest OCR pull command currently uses the `latest-19` tag stream.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when you need RU-tagged Enterprise images from the CPU repository stream.
+- **Use another image when:** Avoid when you want the non-CPU latest stream; use enterprise instead.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/enterprise_ru:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/enterprise_ru:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/enterprise_ru

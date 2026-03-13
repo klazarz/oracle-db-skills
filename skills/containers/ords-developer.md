@@ -21,6 +21,19 @@
 
 The OCR detail page includes the key version note for this repository: `ords-developer` is deprecated beginning with ORDS 24.4.0 and is scheduled for removal from OCR by May 2026.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use only for short-term legacy workflows that still depend on this image.
+- **Use another image when:** Avoid for new deployments; use ords.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/ords-developer:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/ords-developer:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/ords-developer

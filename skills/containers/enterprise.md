@@ -21,6 +21,19 @@
 
 The OCR detail page explicitly documents `enterprise` as the 26ai Enterprise Edition server image. OCR publishes `enterprise_ru` separately for Release Update container images.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when you need Oracle AI Database 26ai Enterprise Edition in a container.
+- **Use another image when:** Avoid when you need CPU/RU stream patch pinning; use enterprise_ru instead.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/enterprise:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/enterprise:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/enterprise

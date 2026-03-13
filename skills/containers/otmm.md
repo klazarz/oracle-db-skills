@@ -21,6 +21,19 @@
 
 The OCR detail page tracks MicroTx image releases rather than a 19c-versus-26ai database matrix. Use the repository tags table to choose the MicroTx release you need.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when you need free MicroTx capabilities for distributed transaction patterns.
+- **Use another image when:** Avoid when you need Enterprise coordinator/console features; use microtx-ee-* images.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/otmm:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/otmm:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/otmm

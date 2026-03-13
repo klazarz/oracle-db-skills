@@ -21,6 +21,19 @@
 
 The OCR detail page tracks SQLcl image releases instead of a 19c-versus-26ai database matrix. The page itself is titled as SQLcl 25.4.2 Docker image documentation, so use the repository tags table to pin the release you want.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use for SQLcl-based scripting and CI automation in a containerized CLI.
+- **Use another image when:** Avoid when you need ORDS runtime or database server capabilities.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/sqlcl:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/sqlcl:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/sqlcl

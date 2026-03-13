@@ -21,6 +21,19 @@
 
 The OCR detail page does not publish a dedicated 19c-versus-26ai compatibility matrix for `cman`. Use the OCR tags table on the repository page to choose the image version you need.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when you need Oracle Connection Manager as a proxy/gateway layer.
+- **Use another image when:** Avoid when clients can connect directly and no proxy tier is required.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/cman:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/cman:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/cman

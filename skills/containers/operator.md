@@ -21,6 +21,19 @@
 
 The OCR detail page tracks operator-image releases instead of a 19c-versus-26ai database matrix. Use the repository tags table and the operator readme to match the operator version to your Kubernetes environment.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when Oracle Database lifecycle is managed through Kubernetes operator patterns.
+- **Use another image when:** Avoid when you are not using Kubernetes operator-based operations.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Kubernetes cluster and operator installation prerequisites apply; follow operator docs from OCR.
+- **Pull:** `docker pull container-registry.oracle.com/database/operator:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/operator:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/operator

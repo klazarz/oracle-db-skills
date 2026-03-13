@@ -21,6 +21,19 @@
 
 The OCR readme explicitly calls out support on Podman starting with 19c (19.16), 21c (21.7), and 23.26ai (26ai). Use the repository tags table to select the exact RAC container version.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when you need Oracle RAC container deployments with Podman guidance.
+- **Use another image when:** Avoid when you need RU stream tags; use rac_ru.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Use Podman-based prerequisites from OCR RAC docs, including network/storage planning.
+- **Pull:** `docker pull container-registry.oracle.com/database/rac:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/rac:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/rac

@@ -21,6 +21,19 @@
 
 The OCR detail page explicitly documents `free` as the Oracle AI Database 26ai Free container image. For a separate 19c line in the Autonomous Database Free family, OCR publishes `adb-free` with its own version matrix.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use for local development and learning with Oracle AI Database 26ai Free.
+- **Use another image when:** Avoid when you need Enterprise-only features or support commitments.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/free:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/free:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/free

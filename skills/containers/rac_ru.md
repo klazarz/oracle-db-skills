@@ -21,6 +21,19 @@
 
 The OCR detail page explicitly positions `rac_ru` as a Release Update image stream and documents support on Podman starting with 19c (19.16) and 21c (21.7). The latest OCR pull command currently uses `latest-19`.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when you need RU-tagged Oracle RAC container images under CPU terms.
+- **Use another image when:** Avoid when you need the non-RU stream; use rac.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Use Podman-based prerequisites from OCR RAC RU docs, including network/storage planning.
+- **Pull:** `docker pull container-registry.oracle.com/database/rac_ru:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/rac_ru:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/rac_ru

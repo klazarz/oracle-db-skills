@@ -1,6 +1,6 @@
 # Oracle DB Skills — Agent Instructions
 
-This repository is a collection of 129 standalone reference guides for Oracle Database and Oracle Container Registry database-category images. Each file covers one topic with explanations, practical examples, best practices, and common mistakes.
+This repository is a collection of 130 standalone reference guides for Oracle Database and Oracle Container Registry database-category images. Each file covers one topic with explanations, practical examples, best practices, and common mistakes.
 
 ## How to Use This Collection
 
@@ -56,4 +56,16 @@ skills/
 - **`skills/performance/explain-plan.md`** — foundation for all SQL performance work
 - **`skills/plsql/plsql-package-design.md`** — foundation for PL/SQL architecture questions
 - **`skills/devops/schema-migrations.md`** — Liquibase/Flyway with Oracle in CI/CD pipelines
-- **`skills/containers/private-ai.md`** — OCR repository guidance for the Oracle Private AI Services container
+- **`skills/containers/container-selection-matrix.md`** — quick decision matrix for choosing the right OCR database-category image
+
+## Common Container Skills (Primary)
+
+- **`skills/containers/adb-free.md`** — Autonomous Database Free container image with ADW/ATP guidance
+- **`skills/containers/enterprise.md`** — Oracle AI Database 26ai Enterprise Edition container image
+- **`skills/containers/free.md`** — Oracle AI Database 26ai Free container image
+- **`skills/containers/instantclient.md`** — Oracle Instant Client image for client tools/libraries
+- **`skills/containers/ords.md`** — supported ORDS container image repository
+- **`skills/containers/rac.md`** — Oracle RAC container deployment guidance for Podman
+- **`skills/containers/sqlcl.md`** — Oracle SQL Command Line (SQLcl) container image repository
+
+For the complete container index (including advanced/niche): `skills/containers/SKILLS.md`

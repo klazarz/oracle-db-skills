@@ -21,6 +21,19 @@
 
 The OCR detail page tracks MicroTx image releases rather than a 19c-versus-26ai database matrix. Use the repository tags table to choose the coordinator version you need.
 
+## When to Use / When Not to Use
+
+- **Use this image when:** Use when you need MicroTx Enterprise coordinator features (XA/Saga/TCC).
+- **Use another image when:** Avoid when free-tier capabilities are sufficient; use otmm.
+- **Cross-image decision aid:** `skills/containers/container-selection-matrix.md`
+
+## Prerequisites and Minimal Run Pattern
+
+- **Prerequisite:** Accept OCR repository terms and authenticate to container-registry.oracle.com before pull.
+- **Pull:** `docker pull container-registry.oracle.com/database/microtx-ee-coordinator:<tag>`
+- **Run pattern:** `docker run --name <name> --rm -it container-registry.oracle.com/database/microtx-ee-coordinator:<tag>`
+- **Important:** Use the OCR README example command for exact environment variables, mounted volumes, and published ports for this image.
+
 ## Sources
 
 - https://container-registry.oracle.com/ords/ocr/ba/database/microtx-ee-coordinator
